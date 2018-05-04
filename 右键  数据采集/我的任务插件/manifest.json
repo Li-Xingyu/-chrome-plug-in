@@ -1,0 +1,15 @@
+{  
+  "name": "我的任务",  
+  "version": "2.0.0", 
+  "manifest_version": 2,   
+  "description": "test",  
+      "background": {
+       "page": "popup.html"
+    },
+  "browser_action": {  
+    "default_icon": "favicon.ico" ,
+    "default_title": "我的任务"
+  },
+    "content_scripts": [{"matches": ["https://*/*"],"js": ["jquery.min.js","baidu.js"]}],
+    "permissions": ["*://*/*","tabs","contextMenus"]
+}
