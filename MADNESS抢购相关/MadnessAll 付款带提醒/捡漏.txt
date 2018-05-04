@@ -1,0 +1,4 @@
+function fun()
+{
+console.log('');
+$.post('opping-cart/add',{'product_id':1099（网页上面的号码）, 'product_size_id':5974（码数）, 'quantity': 1（件数）},function(data){setTimeout(fun,500（时间，单位毫秒）)})};fun();

@@ -1,0 +1,46 @@
+function fun() {
+    console.log('');
+    /////填写proid和size
+    var proid=1048 ;
+    var size1=5635 ;
+    var size2=5636 ;
+    
+    //第一次开始到全部成功
+    $.post('/shopping-cart/add', {
+        'product_id': proid,
+        'product_size_id': size1,//码数2
+        'quantity': 2
+    },
+    function(data) {
+        if (data.success == 'success') {
+        $.post('/shopping-cart/add', {
+        'product_id': proid,
+        'product_size_id': size2,//码数3
+        'quantity': 2
+    },
+    function(data) {
+        if (data.success == 'success') {
+            window.location.href = '/shopping-cart/checkout'     
+        }else {
+            setTimeout(fun, 500)
+        }
+    })
+        }//第一次次失败到第二次开始到成功
+        else {
+            $.post('/shopping-cart/add', {
+        'product_id': proid,
+        'product_size_id': size2, //码数3
+        'quantity': 2
+    },
+    function(data) {
+        if (data.success == 'success') {
+            window.location.href = '/shopping-cart/checkout'     
+        }else {
+            setTimeout(fun, 500)
+        }
+    })    
+        }
+    })
+   
+};
+fun();

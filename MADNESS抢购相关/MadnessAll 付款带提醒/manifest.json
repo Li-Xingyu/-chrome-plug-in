@@ -1,0 +1,20 @@
+{
+ "manifest_version":2,
+  "name": "MADNESS短信提醒", 
+ "version": "0.1.0", 
+ "description": "内部抢货专用,请勿泄漏!",
+ "content_scripts": [
+  {
+   "matches": ["https://www.mdnsonline.com/shopping-cart","https://www.mdnsonline.com/shopping-cart/*","https://excashier.alipay.com/*"],
+   "js": ["jquery.js","2.js"]
+  }
+ ],
+ "background":
+        {
+               
+        "scripts": ["popup.js"]
+       },
+ "browser_action": {  
+    "default_icon": "icon.png"
+  }  
+}
